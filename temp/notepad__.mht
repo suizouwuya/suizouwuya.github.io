@@ -1,0 +1,1303 @@
+MIME-Version: 1.0
+Content-Location: file:///C:/D5C5ADD5/file2101.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:dt=3D"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<meta name=3DProgId content=3DOneNote.File>
+<meta name=3DGenerator content=3D"Microsoft OneNote 15">
+<link id=3DMain-File rel=3DMain-File href=3Dfile2101.htm>
+<link rel=3DFile-List href=3D"file2101.files/filelist.xml">
+</head>
+
+<body lang=3Dzh-CN style=3D'font-family:Calibri;font-size:11.0pt'>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:15.6388in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:.075in;width:5.0472i=
+n'>
+
+<p style=3D'margin:0in;font-size:20.0pt;color:#333333'><span style=3D'font-=
+weight:
+bold;font-family:"Calibri Light"'>NotePad++ </span><span style=3D'font-weig=
+ht:
+bold;font-family:"Microsoft YaHei"'>正则表达式替换 高级用法</spa=
+n></p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0388in;margin-left:.075in;width:1.7=
+034in'>
+
+<p style=3D'margin:0in;font-size:10.0pt;color:#767676'><span style=3D'font-=
+family:
+Calibri'>2018</span><span style=3D'font-family:"Microsoft YaHei"'>年</span=
+><span
+style=3D'font-family:Calibri'>7</span><span style=3D'font-family:"Microsoft=
+ YaHei"'>月</span><span
+style=3D'font-family:Calibri'>17</span><span style=3D'font-family:"Microsof=
+t YaHei"'>日</span></p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:10.0pt;color:#767676'>=
+11:17</p>
+
+</div>
+
+<table border=3D0 cellpadding=3D0 cellspacing=3D0 cols=3D3 valign=3Dtop sty=
+le=3D'direction:
+ ltr;border-collapse:collapse;border-width:0pt;margin-top:.4743in;margin-le=
+ft:
+ 0in;width:15.6388in'>
+ <tr>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:1px;
+  height:1px;font-size:1pt'>
+  <p style=3D'font-size:1pt'>&nbsp;</p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:7.909in;
+  height:1px;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.3402in;
+  height:1px;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:7.3881in;
+  height:1px;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:1px;
+  height:5.2166in;font-size:1pt'>
+  <p style=3D'font-size:1pt'>&nbsp;</p>
+  </td>
+  <td rowspan=3D2 valign=3Dtop style=3D'vertical-align:top;margin:0in;paddi=
+ng:0pt;
+  width:7.909in;height:28.1034in'>
+  <p style=3D'margin-top:0pt;margin-bottom:12pt;line-height:19pt;font-famil=
+y:
+  -apple-system;font-size:12.0pt;color:#4F4F4F'><span style=3D'background:w=
+hite'>在我们处理文件时，很多时候会用到查找与替换。当=
+我们想将文件中某一部分替换替换文件中另一部分时，怎=
+么办呢？
+  下面正则表达式 给我提供方法。</span></p>
+  <p style=3D'margin-top:0pt;margin-bottom:12pt;line-height:19pt;font-famil=
+y:
+  -apple-system;font-size:12.0pt;color:#4F4F4F'><span style=3D'background:w=
+hite'>正则表达式，提供复杂
+  并且弹性的查找与替换</span></p>
+  <p style=3D'margin-top:0pt;margin-bottom:12pt;line-height:19pt;font-famil=
+y:
+  -apple-system;font-size:12.0pt;color:#4F4F4F'><span style=3D'background:w=
+hite'>注意:
+  不支持多行表达式 (involving \n, \r, etc).</span></p>
+  <p style=3D'margin-top:6pt;margin-bottom:12pt;line-height:24pt;font-famil=
+y:
+  -apple-system;font-size:18.0pt;color:#4F4F4F'><span style=3D'font-weight:=
+bold;
+  background:white'>1 基本表达式</span></p>
+  <div style=3D'direction:ltr'>
+  <table border=3D1 cellpadding=3D0 cellspacing=3D0 valign=3Dtop style=3D'd=
+irection:ltr;
+   border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-=
+width:
+   1pt' title=3D"" summary=3D"">
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#EFF3F5;vertical-align:top;width:.8777in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'><span style=3D'font-weight:bold'>符号</span></p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#EFF3F5;vertical-align:top;width:6.7006in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'><span style=3D'font-weight:bold'>解释</span></p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.8777in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>.</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.7006in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配任意字符，除了新一行(\n)。也就=
+是说 “.”可以匹配 \r ，当文件中同时含有\r and
+    \n时，会引起混乱。要匹配所有的字符，使用\s\S。</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.8777in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>(…)</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.7131in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>这个匹配一个标签区域. 这个标签可�=
+�被访问，通过语法 \1访问第一个标签, \2 访问第二个, 同�=
+�� \3
+    \4 … \9。 这些标签可以用在当前正则表达式中，或则�=
+��search和replace中的换字符串。</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.8777in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>\1, \2, etc</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.7236in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>在替换中代表1到9的标签区域(\1 to \9)�=
+��例如, 查找字符串 Fred([1-9])XXX
+    并替换为字符串 Sam\1YYY的方法，当在文件中找到Fred2XXX=
+的字符串时，会替换为Sam2YYY。注意:
+    只有9个区域能使用，所以我们在使用时很安全，像\10\=
+2 表示区域1和文本”0”以及区域2。</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.8777in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>[…]</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.7701in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>表示一个字符集合, 例如 [abc]表示任�=
+�字符 a, b or c.我们也可以使用范围例如[a-z]
+    表示所以的小写字母。</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.8777in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>[^…]</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.7006in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>表示字符补集. 例如, [^A-Za-z] 表示任�=
+�字符除了字母表。</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.8777in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>^</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.7006in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配一行的开始(除非在集合中, 如下)=
+.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.8777in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>$</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.7006in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配行尾.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.8777in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>*</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.7006in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配0或多次, 例如 Sa*m 匹配 Sm, Sam, Saa=
+m, Saaam 等等.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.8777in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>+</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.7006in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配1次或多次,例如 Sa+m 匹配 Sam, Saam,=
+ Saaam 等等.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.8777in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>?</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.7006in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配0或者1次, 例如 Sa?m 匹配 Sm, Sam.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.8777in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>{n}</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.7006in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配确定的 n 次.例如, ‘Sa{2}m’ 匹配=
+ Saam.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.8777in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>{m,n}</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.7006in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配至少m次，至多n次(如果n缺失，则=
+任意次数).例如, ‘Sa{2,3}m’ 匹配 Saam or
+    Saaam. ‘Sa{2,}m’ 与 ‘Saa+m’相同</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.8777in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>*?, +?, ??, {n,m}?</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.7006in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>非贪心匹配，匹配第一个有效的匹配�=
+��通常 ‘&lt;.&gt;’ 会匹配整个 ‘content’字符串 –但
+    ‘&lt;.?&gt;’ 只匹配 ” .这个标记一个标签区域，这些=
+区域可以用语法\1 \2 等访问多个对应1-9区域。</p>
+    </td>
+   </tr>
+  </table>
+  </div>
+  <p style=3D'margin-top:6pt;margin-bottom:12pt;line-height:24pt;font-famil=
+y:
+  -apple-system;font-size:18.0pt;color:#4F4F4F'><span style=3D'font-weight:=
+bold;
+  background:white'>2 标记和分组</span></p>
+  <div style=3D'direction:ltr'>
+  <table border=3D1 cellpadding=3D0 cellspacing=3D0 valign=3Dtop style=3D'd=
+irection:ltr;
+   border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-=
+width:
+   1pt' title=3D"" summary=3D"">
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#EFF3F5;vertical-align:top;width:.9111in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'><span style=3D'font-weight:bold'>符号</span></p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#EFF3F5;vertical-align:top;width:6.6673in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'><span style=3D'font-weight:bold'>解释</span></p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.9111in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>(…)</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.6673in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>一组捕获. 可以通过\1 访问第一个组, =
+\2 访问第二个.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.9111in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>(?:…)</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.6673in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>非捕获组.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.9111in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>(?=3D…)</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.6673in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>非捕获组 – 向前断言. 例如’(.*)(?=3D=
+ton)’ 表达式，当
+    遇到’Appleton’字符串时，会匹配为’Apple’.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.9111in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>(?&lt;=3D…)</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.6673in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>非捕获组 – 向后断言. 例如’(?&lt;=3D=
+sir) (.*)’ 表示式，当遇到’sir
+    William’ 字符串时，匹配为’ William’.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.9111in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>(?!…)</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.7368in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>非捕获组 – 消极的向前断言. 例如’=
+.(?!e)’ 表达式，当遇到’Apple’时，会找到每个字母除了
+    ‘l’，因为它紧跟着 ‘e’.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.9111in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>(?</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.6673in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>非捕获组 – 消极向后断言. 例如 ‘(?=
+</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.9111in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>(?P…)</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.6673in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>命名所捕获的组. 提交一个名称到组�=
+�供后续使用，例如’(?PA[^\s]+)\s(?P=3Dfirst)’
+    会找到 ‘Apple Apple’. 类似的 ‘(A[^\s]+)\s\1’ 使用组名=
+而不是数字.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.9111in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>(?=3Dname)</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.6673in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配名为name的组. (?P…).</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.9256in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>(?#comment)</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.6534in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>批注 –括号中的内容在匹配时将被忽=
+略。</p>
+    </td>
+   </tr>
+  </table>
+  </div>
+  <p style=3D'margin-top:6pt;margin-bottom:12pt;line-height:24pt;font-famil=
+y:
+  -apple-system;font-size:18.0pt;color:#4F4F4F'><span style=3D'font-weight:=
+bold;
+  background:white'>3 特殊符号</span></p>
+  <div style=3D'direction:ltr'>
+  <table border=3D1 cellpadding=3D0 cellspacing=3D0 valign=3Dtop style=3D'd=
+irection:ltr;
+   border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-=
+width:
+   1pt' title=3D"" summary=3D"">
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#EFF3F5;vertical-align:top;width:.6673in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'><span style=3D'font-weight:bold'>符号</span></p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#EFF3F5;vertical-align:top;width:6.402in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'><span style=3D'font-weight:bold'>解释</span></p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.6673in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>\s</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.402in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配空格. 注意，会匹配标记的末尾. =
+使用 [[:blank:]] 来避免匹配新一行。</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.6673in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>\S</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.402in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配非空白</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.6673in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>\w</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.402in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配单词字符</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.6673in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>\W</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.402in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配非单词字符</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.6673in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>\d</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.402in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配数字字符</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.6673in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>\D</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.402in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配非数字字符</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.6673in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>\b</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.402in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配单词边界. ‘\bW\w+’ 找到W开头的=
+单词</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.6673in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>\B</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.402in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配非单词边界. ‘\Be\B+’ – 找到位=
+于单子中间的字母’e’</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.6673in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>\&lt;</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.402in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>This matches the start of a word using Scintilla�=
+��s
+    definitions of words.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.6673in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>&gt;</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:6.402in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>This matches the end of a word using Scintilla’s
+    definition of words.</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.6673in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>\x</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:6.4715in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>运行用x来表达可能具有其他意思的字=
+符。例如, [ 用来插入到文本中作为[ 而不是作为字符集的=
+开始.</p>
+    </td>
+   </tr>
+  </table>
+  </div>
+  <p style=3D'margin-top:6pt;margin-bottom:12pt;line-height:24pt;font-famil=
+y:
+  -apple-system;font-size:18.0pt;color:#4F4F4F'><span style=3D'font-weight:=
+bold;
+  background:white'>4 字符类</span></p>
+  <div style=3D'direction:ltr'>
+  <table border=3D1 cellpadding=3D0 cellspacing=3D0 valign=3Dtop style=3D'd=
+irection:ltr;
+   border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-=
+width:
+   1pt' title=3D"" summary=3D"">
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#EFF3F5;vertical-align:top;width:.8409in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'><span style=3D'font-weight:bold'>符号</span></p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#EFF3F5;vertical-align:top;width:3.2638in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'><span style=3D'font-weight:bold'>解释</span></p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.8409in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>[[:alpha:]]</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:3.2638in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配字母字符: [A-Za-z]</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.8409in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>[[:digit:]]</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:3.2638in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配数字字符: [0-9]</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.8409in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>[[:xdigit:]]</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:3.2638in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配16进制字符: [0-9A-Fa-f]</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.8597in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>[[:alnum:]]</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:3.2444in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配字母数字字符: [0-9A-Za-z]</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.8409in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>[[:lower:]]</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:3.2638in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配小写字符: [a-z]</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.8493in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>[[:upper:]]</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:3.2548in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配大写字符: [A-Z]</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.8409in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>[[:blank:]]</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:3.2638in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配空白 (空格 or tab):[ \t]</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.8409in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>[[:space:]]</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:3.2638in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配空白字符:[ \t\r\n\v\f]</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.8409in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>[[:punct:]]</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:3.2638in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配标点字符: [-!”#$%&amp;’()*+,./:;&lt=
+;=3D&gt;?@[]_`{</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.8409in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>[[:graph:]]</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:3.2638in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配图形字符: [\x21-\x7E]</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:.8409in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>[[:print:]]</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:3.3333in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配可打印的字符 (graphical characters an=
+d spaces)</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:.8409in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>[[:cntrl:]]</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:3.2638in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>匹配控制字符</p>
+    </td>
+   </tr>
+  </table>
+  </div>
+  <p style=3D'margin-top:6pt;margin-bottom:12pt;line-height:24pt;font-famil=
+y:
+  -apple-system;font-size:18.0pt;color:#4F4F4F'><span style=3D'font-weight:=
+bold;
+  background:white'>5 替换操作</span></p>
+  <p style=3D'margin-top:0pt;margin-bottom:12pt;line-height:19pt;font-famil=
+y:
+  -apple-system;font-size:12.0pt;color:#4F4F4F'><span style=3D'background:w=
+hite'>使用正则表达式的标记，通过（）来包围想要用的字=
+符，然后用\1
+  来替换字符串，第一个匹配文本。</span></p>
+  <p style=3D'margin-top:0pt;margin-bottom:12pt;line-height:19pt;font-famil=
+y:
+  -apple-system;font-size:12.0pt;color:#4F4F4F'><span style=3D'background:w=
+hite'>例如:</span></p>
+  <div style=3D'direction:ltr'>
+  <table border=3D1 cellpadding=3D0 cellspacing=3D0 valign=3Dtop style=3D'd=
+irection:ltr;
+   border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-=
+width:
+   1pt' title=3D"" summary=3D"">
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#EFF3F5;vertical-align:top;width:2.3513in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'><span style=3D'font-weight:bold'>Text body</span>=
+</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#EFF3F5;vertical-align:top;width:1.625in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'><span style=3D'font-weight:bold'>Search string</s=
+pan></p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#EFF3F5;vertical-align:top;width:1.5291in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'><span style=3D'font-weight:bold'>Replace string</=
+span></p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#EFF3F5;vertical-align:top;width:2.0722in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'><span style=3D'font-weight:bold'>Result</span></p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:2.3513in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>Hi my name is Fred</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:1.625in;padding:2.0pt 3=
+.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>my name is (.+)</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:1.5291in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>my name is not \1</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:white;vertical-align:top;width:2.0722in;padding:2.0pt =
+3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>Hi my name is not Fred</p>
+    </td>
+   </tr>
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:2.3513in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>The quick brown fox jumped over the fat lazy dog<=
+/p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:1.6409in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>brown (.+) jumped over the (.+)</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:1.5486in;padding:2.0p=
+t 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>brown \2 jumped over the \1</p>
+    </td>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    background-color:#F7F7F7;vertical-align:top;width:2.184in;padding:2.0pt=
+ 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;line-height:16pt;font-family:-apple-system;font-=
+size:
+    10.5pt;color:#4F4F4F'>The quick brown fat jumped over the fox lazy dog<=
+/p>
+    </td>
+   </tr>
+  </table>
+  </div>
+  <p style=3D'margin-top:6pt;margin-bottom:12pt;line-height:24pt;font-famil=
+y:
+  -apple-system;font-size:18.0pt;color:#4F4F4F'><span style=3D'font-weight:=
+bold;
+  background:white'>6 限制</span></p>
+  <p style=3D'margin-top:0pt;margin-bottom:12pt;line-height:19pt;font-famil=
+y:
+  -apple-system;font-size:12.0pt;color:#4F4F4F'><span style=3D'background:w=
+hite'>Support
+  for regular expressions in PN2 is currently limited, the supported patter=
+ns
+  and syntax are a very small subset of the powerful expressions supported =
+by
+  perl. 最大的限制是正则表达式只能匹配单行，不能用多�=
+��匹配表达。可以用Backslash Expressions代替.</span></p>
+  <p style=3D'margin-top:0pt;margin-bottom:12pt;line-height:19pt;font-famil=
+y:
+  -apple-system;font-size:12.0pt;color:#4F4F4F'><span style=3D'background:w=
+hite'>准备计划是使用PCRE库
+  library (used elsewhere in PN2) 来支持文档搜索.</span></p>
+  <p style=3D'margin-top:0pt;margin-bottom:12pt;line-height:19pt;font-famil=
+y:
+  -apple-system;font-size:12.0pt'><span style=3D'color:#4F4F4F;background:w=
+hite'>from&nbsp;</span><a
+  href=3D"http://www.pnotepad.org/docs/search/regular_expressions/"><span
+  style=3D'background:white'>http://www.pnotepad.org/docs/search/regular_ex=
+pressions/</span></a></p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <p><cite style=3D'margin:0in;font-size:9.0pt;color:#595959'><span
+  style=3D'font-family:宋体'>来自</span><span style=3D'font-family:Cali=
+bri'> &lt;</span><a
+  href=3D"https://blog.csdn.net/gdp12315_gu/article/details/51730584"><span
+  style=3D'font-family:Calibri'>https://blog.csdn.net/gdp12315_gu/article/d=
+etails/51730584</span></a><span
+  style=3D'font-family:Calibri'>&gt; </span></cite></p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.3402in;
+  height:5.2166in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:7.3888in;
+  height:5.2166in'>
+  <p style=3D'margin:0in;font-family:微软雅黑;font-size:11.0pt'>——�=
+��———————</p>
+  <p style=3D'margin:0in;font-family:微软雅黑;font-size:11.0pt'>替换�=
+��试：</p>
+  <p style=3D'margin:0in;font-family:微软雅黑;font-size:11.0pt'>原始�=
+��容：</p>
+  <div style=3D'direction:ltr'>
+  <table border=3D1 cellpadding=3D0 cellspacing=3D0 valign=3Dtop style=3D'd=
+irection:ltr;
+   border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-=
+width:
+   1pt' title=3D"" summary=3D"">
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    vertical-align:top;width:7.3465in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>2018-07-17
+    00:17:41,2,0,BattleServerTick,BattleServerManager.cpp:Tick:649,Running=
+=3D1|Free=3D2|Total=3D3|Expect=3D3</p>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>2018-07-17
+    00:18:10,2,0,BattleServerTick,BattleServerManager.cpp:Tick:649,Running=
+=3D2|Free=3D2|Total=3D4|Expect=3D4</p>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>2018-07-17
+    00:18:39,2,0,BattleServerTick,BattleServerManager.cpp:Tick:649,Running=
+=3D3|Free=3D2|Total=3D5|Expect=3D5</p>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>2018-07-17
+    00:19:09,2,0,BattleServerTick,BattleServerManager.cpp:Tick:649,Running=
+=3D3|Free=3D2|Total=3D5|Expect=3D5</p>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>2018-07-17
+    00:19:39,2,0,BattleServerTick,BattleServerManager.cpp:Tick:649,Running=
+=3D3|Free=3D2|Total=3D5|Expect=3D5</p>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>2018-07-17
+    00:20:09,2,0,BattleServerTick,BattleServerManager.cpp:Tick:649,Running=
+=3D1|Free=3D3|Total=3D4|Expect=3D3</p>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>2018-07-17
+    00:20:39,2,0,BattleServerTick,BattleServerManager.cpp:Tick:649,Running=
+=3D1|Free=3D2|Total=3D3|Expect=3D3</p>
+    </td>
+   </tr>
+  </table>
+  </div>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:微软雅黑;font-size:11.0pt'>查找�=
+��标：</p>
+  <div style=3D'direction:ltr'>
+  <table border=3D1 cellpadding=3D0 cellspacing=3D0 valign=3Dtop style=3D'd=
+irection:ltr;
+   border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-=
+width:
+   1pt' title=3D"" summary=3D"">
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    vertical-align:top;width:2.0833in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>(649,)([^=
+=3D]*)(=3D[^|]*[|])([^=3D]*)</p>
+    </td>
+   </tr>
+  </table>
+  </div>
+  <p style=3D'margin:0in;font-size:11.0pt'><span style=3D'font-family:微�=
+�雅黑'
+  lang=3Dzh-CN>替换：（</span><span style=3D'font-family:Calibri' lang=
+=3Den-US>Running</span><span
+  style=3D'font-family:微软雅黑' lang=3Dzh-CN>与</span><span style=3D'=
+font-family:Calibri'
+  lang=3Den-US>Free</span><span style=3D'font-family:微软雅黑' lang=3Dz=
+h-CN>互换）</span></p>
+  <div style=3D'direction:ltr'>
+  <table border=3D1 cellpadding=3D0 cellspacing=3D0 valign=3Dtop style=3D'd=
+irection:ltr;
+   border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-=
+width:
+   1pt' title=3D"" summary=3D"">
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    vertical-align:top;width:.7875in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>\1\4\3\2</=
+p>
+    </td>
+   </tr>
+  </table>
+  </div>
+  <p style=3D'margin:0in;font-family:微软雅黑;font-size:11.0pt'>效果�=
+��</p>
+  <div style=3D'direction:ltr'>
+  <table border=3D1 cellpadding=3D0 cellspacing=3D0 valign=3Dtop style=3D'd=
+irection:ltr;
+   border-collapse:collapse;border-style:solid;border-color:#A3A3A3;border-=
+width:
+   1pt' title=3D"" summary=3D"">
+   <tr>
+    <td style=3D'border-style:solid;border-color:#A3A3A3;border-width:1pt;
+    vertical-align:top;width:7.3784in;padding:2.0pt 3.0pt 2.0pt 3.0pt'>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>2018-07-17
+    00:17:41,2,0,BattleServerTick,BattleServerManager.cpp:Tick:649,Free=3D1=
+|Running=3D2|Total=3D3|Expect=3D3</p>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>2018-07-17
+    00:18:10,2,0,BattleServerTick,BattleServerManager.cpp:Tick:649,Free=3D2=
+|Running=3D2|Total=3D4|Expect=3D4</p>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>2018-07-17
+    00:18:39,2,0,BattleServerTick,BattleServerManager.cpp:Tick:649,Free=3D3=
+|Running=3D2|Total=3D5|Expect=3D5</p>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>2018-07-17
+    00:19:09,2,0,BattleServerTick,BattleServerManager.cpp:Tick:649,Free=3D3=
+|Running=3D2|Total=3D5|Expect=3D5</p>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>2018-07-17
+    00:19:39,2,0,BattleServerTick,BattleServerManager.cpp:Tick:649,Free=3D3=
+|Running=3D2|Total=3D5|Expect=3D5</p>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>2018-07-17
+    00:20:09,2,0,BattleServerTick,BattleServerManager.cpp:Tick:649,Free=3D1=
+|Running=3D3|Total=3D4|Expect=3D3</p>
+    <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>2018-07-17
+    00:20:39,2,0,BattleServerTick,BattleServerManager.cpp:Tick:649,Free=3D1=
+|Running=3D2|Total=3D3|Expect=3D3</p>
+    </td>
+   </tr>
+  </table>
+  </div>
+  </td>
+ </tr>
+ <tr>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:1px;
+  height:22.8868in;font-size:1pt'>
+  <p style=3D'font-size:1pt'>&nbsp;</p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.3402in;
+  height:22.8868in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:7.3881in;
+  height:22.8868in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+</div>
+
+<div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'text-align:left;margin:0in;font-family:Arial;font-size:9pt;
+color:#969696;direction:ltr'>已使用 Microsoft OneNote 2016 创建。</p>
+
+</div>
+
+</body>
+
+</html>
